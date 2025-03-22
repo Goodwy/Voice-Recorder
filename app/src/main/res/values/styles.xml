@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.NoDisplay" parent="AppTheme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoDisplay">true</item>
+    </style>
+
+    <style name="LightActionBarItems" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorHint">@color/hint_white</item>
+    </style>
+
+    <style name="DarkActionBarItems" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorAccent">@color/dark_grey</item>
+        <item name="android:textColorHint">@color/hint_black</item>
+    </style>
+
+</resources>

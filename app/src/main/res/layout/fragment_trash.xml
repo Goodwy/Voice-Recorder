@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.goodwy.voicerecorder.fragments.TrashFragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trash_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.goodwy.commons.views.MyTextView
+        android:id="@+id/trash_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/small_margin"
+        android:padding="@dimen/activity_margin"
+        android:text="@string/recycle_bin_empty"
+        android:textSize="@dimen/bigger_text_size"
+        android:textStyle="italic"
+        android:visibility="gone" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loading_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
+        android:id="@+id/trash_fastscroller"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.goodwy.commons.views.MyRecyclerView
+            android:id="@+id/trash_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layoutAnimation="@anim/layout_animation"
+            android:scrollbars="none"
+            app:layoutManager="com.goodwy.commons.views.MyLinearLayoutManager" />
+
+    </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
+</com.goodwy.voicerecorder.fragments.TrashFragment>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_launcher_name">Înregistrare voce</string>
+    <string name="recording_saved_successfully">Înregistrare salvată cu succes</string>
+    <string name="recording">Înregistrare activă</string>
+    <string name="no_recordings_found">Nu au fost găsite înregistrări create
+\nde această aplicație</string>
+    <string name="no_recordings_in_folder_found">Nu au fost găsite înregistrări
+\nîn dosarul selectat</string>
+    <string name="paused">A fost pus în pauză</string>
+    <string name="delete_recordings_confirmation">Ștergeți %s\?</string>
+    <plurals name="delete_recordings">
+        <item quantity="one">%d înregistrare</item>
+        <item quantity="few">%d înregistrări</item>
+        <item quantity="other">%d înregistrări</item>
+    </plurals>
+    <string name="try_hiding_notification">Încercați să ascundeți notificarea de înregistrare</string>
+    <string name="save_recordings_in">Salvați înregistrările în</string>
+    <string name="bitrate">Rata de biți</string>
+    <string name="record_after_launch">Începeți înregistrarea în mod automat după lansarea aplicației</string>
+    <string name="faq_1_title">Pot să ascund pictograma de notificare în timpul înregistrării\?</string>
+    <string name="faq_1_text">Ei bine, depinde. În timp ce vă utilizați dispozitivul, nu mai este posibil să ascundeți complet notificările unor astfel de aplicații. Dacă bifați setarea corespunzătoare, aplicația va face tot posibilul să o ascundă. Totuși, o puteți ascunde pe ecranul de blocare, dacă dezactivați afișarea conţinutului sensibil al notificărilor în setările dispozitivului.</string>
+    <string name="audio_source">Sursă audio</string>
+    <string name="audio_source_camcorder">Cameră</string>
+    <string name="audio_source_unprocessed">Neprocesat</string>
+    <string name="audio_source_microphone">Microfon</string>
+    <string name="audio_source_voice_recognition">Recunoaștere vocală</string>
+    <string name="audio_source_voice_communication">Comunicare vocală</string>
+    <string name="audio_source_voice_performance">Performanță vocală</string>
+</resources>

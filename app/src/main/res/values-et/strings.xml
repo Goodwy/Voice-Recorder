@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_launcher_name">Helisalvestaja</string>
+    <string name="recording_saved_successfully">Salvestamine õnnestus</string>
+    <string name="recording">Salvestus</string>
+    <string name="no_recordings_found">Ühtegi selle rakenduse poolt tehtud
+\nsalvestust ei leidu</string>
+    <string name="no_recordings_in_folder_found">Valitud kaustas ei leidu
+\nühtegi salvestust</string>
+    <string name="paused">Peatatud</string>
+    <string name="recorder">Salvestaja</string>
+    <string name="player">Mängija</string>
+    <string name="delete_recordings_confirmation">Kas kustutame %s\?</string>
+    <plurals name="delete_recordings">
+        <item quantity="one">%d salvestus</item>
+        <item quantity="other">%d salvestust</item>
+    </plurals>
+    <string name="try_hiding_notification">Proovi peita salvestamise teavitust</string>
+    <string name="save_recordings_in">Salvesta failid kausta</string>
+    <string name="audio_source">Heliallikas</string>
+    <string name="bitrate">Bitikiirus</string>
+    <string name="record_after_launch">Rakenduse käivitamisel alusta kohe salvestamist</string>
+    <string name="audio_source_camcorder">Kaamera</string>
+    <string name="audio_source_default">Vaikimisi Androidi helisisend</string>
+    <string name="audio_source_unprocessed">Töötlemata</string>
+    <string name="audio_source_microphone">Mikrofon</string>
+    <string name="audio_source_voice_recognition">Häältuvastus</string>
+    <string name="audio_source_voice_communication">Kõneside</string>
+    <string name="audio_source_voice_performance">Häälte esitus</string>
+    <string name="faq_1_title">Kas salvestamise ajal saan peita vastavat teavitust\?</string>
+    <string name="faq_1_text">Eks see nüüd sõltub… Selliste rakenduste täiesti peitmine kasutamise ajal ei ole enam võimalik. Seadistustest vastava sätte valimisel annab see rakendus endast parima, et teavitusi peita. Lisaks saad üldistest seadistustest keelata privaatsete teavituste näitamise lukustuskuval ning siis ka seda rakendust pole seal näha.</string>
+    <string name="recording_too_short">Salvestise kestus oli liiga napp, et seda jäädvustada!</string>
+    <string name="keep_screen_on">Salvestuse ajal hoia ekraan sisselülitatuna</string>
+    <string name="confirm_recording_folder">Sa pead valima kusta, kuhu soovid salvestusi talletada. Jätkamiseks palun vajuta „Sobib“ nuppu.</string>
+    <string name="move_recordings_to_new_folder_desc">Sul on olemasolevaid salvestusi. Kas sa soovid neid oma uude kausta tõsta?</string>
+    <string name="move_recordings">Salvestuste teisaldamine</string>
+</resources>

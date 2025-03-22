@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_date_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/record_display_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/widget_name"
+        android:background="@drawable/ring_record"
+        android:contentDescription="@string/record_audio"
+        tools:src="@drawable/oval_record"/>
+
+    <TextView
+        android:id="@+id/widget_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:gravity="center|bottom"
+        android:includeFontPadding="false"
+        android:lines="1"
+        android:paddingTop="@dimen/small_margin"
+        android:paddingHorizontal="@dimen/small_margin"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:text="@string/app_launcher_name" />
+</RelativeLayout>

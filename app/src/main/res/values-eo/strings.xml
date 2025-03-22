@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_launcher_name">Sonregistrilo</string>
+    <string name="no_recordings_found">No recordings created by this app
+\nhave been found</string>
+    <string name="no_recordings_in_folder_found">No recordings have been found
+\nin the selected folder</string>
+    <string name="delete_recordings_confirmation">Ĉu forviŝi %s\?</string>
+    <plurals name="delete_recordings">
+        <item quantity="one">%d registraĵon</item>
+        <item quantity="other">%d registraĵojn</item>
+    </plurals>
+    </resources>

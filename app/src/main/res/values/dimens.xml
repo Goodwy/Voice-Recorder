@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toggle_recording_button_size">64dp</dimen>
+    <dimen name="player_button_margin">48dp</dimen>
+    <dimen name="main_button_size">150dp</dimen>
+
+    <dimen name="padding_record_icon">16dp</dimen>
+
+    <!--RecyclerViewFastScroller-->
+    <dimen name="default_handle_width">22dp</dimen>
+    <dimen name="default_handle_left_padding">14dp</dimen>
+</resources>

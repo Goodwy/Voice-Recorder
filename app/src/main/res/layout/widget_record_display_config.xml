@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/config_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/config_widget_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_margin">
+
+        <RelativeLayout
+            android:id="@+id/config_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/config_holder"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/config_image_ring"
+                android:layout_width="@dimen/main_button_size"
+                android:layout_height="@dimen/main_button_size"
+                android:background="@drawable/ring_record"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/record_audio" />
+
+            <ImageView
+                android:id="@+id/config_image"
+                android:layout_width="@dimen/main_button_size"
+                android:layout_height="@dimen/main_button_size"
+                android:background="@drawable/oval_record"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/record_audio" />
+
+            <TextView
+                android:id="@+id/widget_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/config_image"
+                android:ellipsize="end"
+                android:gravity="center|bottom"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingHorizontal="@dimen/tiny_margin"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:text="@string/app_launcher_name" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/config_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_background_16dp"
+            android:backgroundTint="@color/md_grey_black">
+
+            <RelativeLayout
+                android:id="@+id/configWidgetColorHolder"
+                style="@style/SettingsHolderStyle"
+                android:layout_marginTop="@dimen/normal_margin">
+
+                <com.goodwy.commons.views.MyTextView
+                    android:id="@+id/config_widget_color_label"
+                    style="@style/SettingsTextLabelStyle"
+                    android:text="@string/background_color"/>
+
+                <ImageView
+                    android:id="@+id/config_widget_color"
+                    android:layout_width="@dimen/color_sample_size"
+                    android:layout_height="@dimen/color_sample_size"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/settings_margin"
+                    android:clickable="false"
+                    android:contentDescription="@null" />
+            </RelativeLayout>
+
+            <com.goodwy.commons.views.MySeekBar
+                android:id="@+id/config_widget_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/configWidgetColorHolder"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/normal_margin"
+                android:paddingHorizontal="@dimen/settings_margin"
+                android:paddingVertical="@dimen/normal_margin" />
+
+            <RelativeLayout
+                android:id="@+id/configWidgetNameHolder"
+                style="@style/SettingsHolderSwitchStyle"
+                android:layout_below="@+id/config_widget_seekbar">
+
+                <com.goodwy.commons.views.MyMaterialSwitch
+                    android:id="@+id/configWidgetName"
+                    style="@style/SettingsSwitchStyle"
+                    android:text="@string/label"
+                    app:switchPadding="@dimen/bigger_margin"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/configWidgetNameTextColorHolder"
+                style="@style/SettingsHolderStyle"
+                android:layout_below="@+id/configWidgetNameHolder">
+
+                <com.goodwy.commons.views.MyTextView
+                    android:id="@+id/configWidgetNameTextColorLabel"
+                    style="@style/SettingsTextLabelStyle"
+                    android:text="@string/text_color"/>
+
+                <ImageView
+                    android:id="@+id/configWidgetNameTextColor"
+                    android:layout_width="@dimen/color_sample_size"
+                    android:layout_height="@dimen/color_sample_size"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/settings_margin"
+                    android:clickable="false"
+                    android:contentDescription="@null" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/config_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/configWidgetNameTextColorHolder"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/smaller_margin"
+                android:background="@drawable/button_background_12dp"
+                android:text="@string/ok" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

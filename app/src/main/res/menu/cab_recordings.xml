@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AppCompatResource,AlwaysShowAction">
+    <item
+        android:id="@+id/cab_select_all"
+        android:icon="@drawable/ic_select_all_vector"
+        android:title="@string/select_all"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/cab_rename"
+        android:icon="@drawable/ic_file_rename"
+        android:title="@string/rename"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/cab_delete"
+        android:icon="@drawable/ic_delete_outline"
+        android:title="@string/delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/cab_open_with"
+        android:icon="@drawable/ic_open_with"
+        android:title="@string/open_with"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/cab_share"
+        android:icon="@drawable/ic_ios_share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+</menu>

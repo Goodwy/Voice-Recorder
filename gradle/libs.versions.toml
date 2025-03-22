@@ -1,0 +1,74 @@
+[versions]
+#jetbrains
+kotlin = "1.9.25"
+#KSP
+ksp = "1.9.25-1.0.20"
+#Detekt
+detekt = "1.23.3"
+#AndroidX
+androidx-constraintlayout = "2.2.0"
+androidx-documentfile = "1.0.1"
+androidx-swiperefreshlayout = "1.1.0"
+#Eventbus
+eventbus = "3.3.1"
+#AudioRecordView
+audiorecordview = "1.0.4"
+#TAndroidLame
+tandroidlame = "1.1"
+#AutofitTextView
+autofittextview = "0.2.1"
+#Goodwy
+right-commons = "7b53a0d731"
+behavioRule = "1.0.1"
+androidx-lifecycle = "2.7.0-alpha02"
+rxAnimation = "2.1.1"
+rxJava3 = "3.1.5"
+swipeToActionLayout = "bd1eb3c8a3"
+#Gradle
+gradlePlugins-agp = "8.7.3"
+#build
+app-build-compileSDKVersion = "34"
+app-build-targetSDK = "34"
+app-build-minimumSDK = "26"
+app-build-javaVersion = "VERSION_17"
+app-build-kotlinJVMTarget = "17"
+#versioning
+app-version-appId = "com.goodwy.voicerecorder"
+app-version-versionCode = "610"
+app-version-versionName = "6.1.0"
+[libraries]
+#AndroidX
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-documentfile = { module = "androidx.documentfile:documentfile", version.ref = "androidx-documentfile" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "androidx-swiperefreshlayout" }
+#EventBus
+eventbus = { module = "org.greenrobot:eventbus", version.ref = "eventbus" }
+#AudioRecordView
+audiorecordview = { module = "com.github.Armen101:AudioRecordView", version.ref = "audiorecordview" }
+#TAndroidLame
+tandroidlame = { module = "com.github.naman14:TAndroidLame", version.ref = "tandroidlame" }
+#AutofitTextView
+autofittextview = { module = "me.grantland:autofittextview", version.ref = "autofittextview" }
+#Goodwy
+goodwy-commons = { module = "com.github.Goodwy:Goodwy-Commons", version.ref = "right-commons" }
+behavio-rule = { module = "com.github.Liverm0r:BehavioRule", version.ref = "behavioRule" }
+rx-animation = { module = "com.mikhaellopez:rxanimation", version.ref = "rxAnimation" }
+rx-java = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxJava3" }
+swipe-action = { module = "com.github.Goodwy:SwipeActionView", version.ref = "swipeToActionLayout" }
+#Android X lifecycle
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewModel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+[bundles]
+lifecycle = [
+    "androidx-lifecycle-compose",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-viewModel",
+    "androidx-lifecycle-viewModel-compose",
+]
+[plugins]
+android = { id = "com.android.application", version.ref = "gradlePlugins-agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

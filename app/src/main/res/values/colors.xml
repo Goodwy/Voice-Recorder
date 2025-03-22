@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_widget_bg_color">@color/red_missed</color>
+
+    <color name="white">#FFFF</color>
+    <color name="color_primary">@color/primary</color>
+    <color name="color_primary_dark">@color/primary</color>
+
+    <color name="green_call">#FF67CE67</color>
+    <color name="swipe_purple">#FF5E5CE6</color>
+</resources>

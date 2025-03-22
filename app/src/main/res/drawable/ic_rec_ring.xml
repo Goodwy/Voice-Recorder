@@ -1,0 +1,3 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="@dimen/toggle_recording_button_size" android:height="@dimen/toggle_recording_button_size" android:viewportWidth="512" android:viewportHeight="512">
+    <path android:fillColor="@android:color/white" android:fillType="evenOdd" android:pathData="M256 485c126.47 0 229-102.53 229-229S382.47 27 256 27 27 129.53 27 256s102.53 229 229 229zm0-20c114.32 0 207-93.57 207-209S370.32 47 256 47 49 140.57 49 256s92.68 209 207 209z"/>
+    </vector>
