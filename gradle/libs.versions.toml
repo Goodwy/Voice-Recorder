@@ -18,7 +18,7 @@ tandroidlame = "1.1"
 #AutofitTextView
 autofittextview = "0.2.1"
 #Goodwy
-right-commons = "7b53a0d731"
+right-commons = "bb6b45a4be"
 behavioRule = "1.0.1"
 androidx-lifecycle = "2.7.0-alpha02"
 rxAnimation = "2.1.1"
@@ -33,9 +33,10 @@ app-build-minimumSDK = "26"
 app-build-javaVersion = "VERSION_17"
 app-build-kotlinJVMTarget = "17"
 #versioning
-app-version-appId = "com.goodwy.voicerecorder"
-app-version-versionCode = "610"
-app-version-versionName = "6.1.0"
+app-version-appId = "com.goodwy.voicerecorderfree"
+app-version-namespace = "com.goodwy.voicerecorder"
+app-version-versionCode = "620"
+app-version-versionName = "6.2.0"
 [libraries]
 #AndroidX
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="pretend_thank_you_installed">true</bool>
-    <bool name="is_pro_app">true</bool>
+    <bool name="is_pro_app">false</bool>
 </resources>

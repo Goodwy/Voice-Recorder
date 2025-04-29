@@ -103,7 +103,7 @@ android {
         kotlinOptions.jvmTarget = project.libs.versions.app.build.kotlinJVMTarget.get()
     }
 
-    namespace = libs.versions.app.version.appId.get()
+    namespace = libs.versions.app.version.namespace.get()
 
     lint {
         checkReleaseBuilds = false

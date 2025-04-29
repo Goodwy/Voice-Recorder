@@ -2,12 +2,19 @@ package com.goodwy.voicerecorder.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.media.MediaRecorder
 import android.os.Bundle
+import android.view.View
+import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import com.behaviorule.arturdumchev.library.pixels
 import com.goodwy.commons.dialogs.*
 import com.goodwy.commons.extensions.*
 import com.goodwy.commons.helpers.*
+import com.goodwy.commons.helpers.rustore.RuStoreHelper
+import com.goodwy.commons.helpers.rustore.model.StartPurchasesEvent
 import com.goodwy.commons.models.RadioItem
 import com.goodwy.voicerecorder.BuildConfig
 import com.goodwy.voicerecorder.R
@@ -22,10 +29,13 @@ import com.goodwy.voicerecorder.extensions.launchFolderPicker
 import com.goodwy.voicerecorder.extensions.launchPurchase
 import com.goodwy.voicerecorder.helpers.*
 import com.goodwy.voicerecorder.models.Events
+import com.google.android.material.snackbar.Snackbar
 import com.mikhaellopez.rxanimation.RxAnimation
 import com.mikhaellopez.rxanimation.shake
+import kotlinx.coroutines.launch
 import kotlin.collections.ArrayList
 import org.greenrobot.eventbus.EventBus
+import ru.rustore.sdk.core.feature.model.FeatureAvailabilityResult
 import java.util.Locale
 import kotlin.system.exitProcess
 
@@ -33,6 +43,8 @@ class SettingsActivity : SimpleActivity() {
     private var recycleBinContentSize = 0
     private lateinit var binding: ActivitySettingsBinding
 
+    private val purchaseHelper = PurchaseHelper(this)
+    private var ruStoreHelper: RuStoreHelper? = null
     private val productIdX1 = BuildConfig.PRODUCT_ID_X1
     private val productIdX2 = BuildConfig.PRODUCT_ID_X2
     private val productIdX3 = BuildConfig.PRODUCT_ID_X3
@@ -42,6 +54,7 @@ class SettingsActivity : SimpleActivity() {
     private val subscriptionYearIdX1 = BuildConfig.SUBSCRIPTION_YEAR_ID_X1
     private val subscriptionYearIdX2 = BuildConfig.SUBSCRIPTION_YEAR_ID_X2
     private val subscriptionYearIdX3 = BuildConfig.SUBSCRIPTION_YEAR_ID_X3
+    private var ruStoreIsConnected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
@@ -63,11 +76,76 @@ class SettingsActivity : SimpleActivity() {
                 updateNavigationBarColor(getProperBackgroundColor())
             }
         }
+
+        if (isPlayStoreInstalled()) {
+            //PlayStore
+            purchaseHelper.initBillingClient()
+            val iapList: ArrayList<String> = arrayListOf(productIdX1, productIdX2, productIdX3)
+            val subList: ArrayList<String> = arrayListOf(subscriptionIdX1, subscriptionIdX2, subscriptionIdX3, subscriptionYearIdX1, subscriptionYearIdX2, subscriptionYearIdX3)
+            purchaseHelper.retrieveDonation(iapList, subList)
+
+            purchaseHelper.isIapPurchased.observe(this) {
+                when (it) {
+                    is Tipping.Succeeded -> {
+                        config.isPro = true
+                        updatePro()
+                    }
+                    is Tipping.NoTips -> {
+                        config.isPro = false
+                        updatePro()
+                    }
+                    is Tipping.FailedToLoad -> {
+                    }
+                }
+            }
+
+            purchaseHelper.isSupPurchased.observe(this) {
+                when (it) {
+                    is Tipping.Succeeded -> {
+                        config.isProSubs = true
+                        updatePro()
+                    }
+                    is Tipping.NoTips -> {
+                        config.isProSubs = false
+                        updatePro()
+                    }
+                    is Tipping.FailedToLoad -> {
+                    }
+                }
+            }
+        }
+        if (isRuStoreInstalled()) {
+            //RuStore
+            ruStoreHelper = RuStoreHelper()
+            ruStoreHelper!!.checkPurchasesAvailability(this@SettingsActivity)
+
+            lifecycleScope.launch {
+                ruStoreHelper!!.eventStart
+                    .flowWithLifecycle(lifecycle)
+                    .collect { event ->
+                        handleEventStart(event)
+                    }
+            }
+
+            lifecycleScope.launch {
+                ruStoreHelper!!.statePurchased
+                    .flowWithLifecycle(lifecycle)
+                    .collect { state ->
+                        //update of purchased
+                        if (!state.isLoading && ruStoreIsConnected) {
+                            baseConfig.isProRuStore = state.purchases.firstOrNull() != null
+                            updatePro()
+                        }
+                    }
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
         setupToolbar(binding.settingsToolbar, NavigationIcon.Arrow)
+
+        setupPurchaseThankYou()
 
         setupCustomizeColors()
         setupCustomizeWidgetColors()
@@ -110,11 +188,47 @@ class SettingsActivity : SimpleActivity() {
         updateTextColors(binding.settingsHolder)
     }
 
+    private fun updatePro(isPro: Boolean = checkPro()) {
+        binding.apply {
+            settingsPurchaseThankYouHolder.beGoneIf(isPro)
+            settingsTipJarHolder.beVisibleIf(isPro)
+
+            val stringId =
+                if (isRTLLayout) com.goodwy.strings.R.string.swipe_right_action
+                else com.goodwy.strings.R.string.swipe_left_action
+            settingsSwipeLeftActionLabel.text = addLockedLabelIfNeeded(stringId, isPro)
+
+            arrayOf(
+                settingsSwipeLeftActionHolder
+            ).forEach {
+                it.alpha = if (isPro) 1f else 0.4f
+            }
+        }
+    }
+
+    private fun setupPurchaseThankYou() {
+        binding.apply {
+            settingsPurchaseThankYouHolder.beGoneIf(checkPro())
+            settingsPurchaseThankYouHolder.setOnClickListener {
+                launchPurchase()
+            }
+            moreButton.setOnClickListener {
+                launchPurchase()
+            }
+            val appDrawable = resources.getColoredDrawableWithColor(this@SettingsActivity, com.goodwy.commons.R.drawable.ic_plus_support, getProperPrimaryColor())
+            purchaseLogo.setImageDrawable(appDrawable)
+            val drawable = resources.getColoredDrawableWithColor(this@SettingsActivity, com.goodwy.commons.R.drawable.button_gray_bg, getProperPrimaryColor())
+            moreButton.background = drawable
+            moreButton.setTextColor(getProperBackgroundColor())
+            moreButton.setPadding(2, 2, 2, 2)
+        }
+    }
+
     private fun setupCustomizeColors() {
         binding.settingsCustomizeColorsHolder.setOnClickListener {
             startCustomizationActivity(
                 showAccentColor = false,
-                isCollection = true,
+                isCollection = resources.getBoolean(R.bool.is_pro_app),
                 productIdList = arrayListOf(productIdX1, productIdX2, productIdX3),
                 productIdListRu = arrayListOf(productIdX1, productIdX2, productIdX3),
                 subscriptionIdList = arrayListOf(subscriptionIdX1, subscriptionIdX2, subscriptionIdX3),
@@ -152,13 +266,15 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupLanguage() {
-        binding.apply {
-            settingsLanguage.text = Locale.getDefault().displayLanguage
-            settingsLanguageHolder.beVisibleIf(isTiramisuPlus())
+    private fun setupLanguage() = binding.apply {
+        settingsLanguage.text = Locale.getDefault().displayLanguage
+        if (isTiramisuPlus()) {
+            settingsLanguageHolder.beVisible()
             settingsLanguageHolder.setOnClickListener {
                 launchChangeAppLanguageIntent()
             }
+        } else {
+            settingsLanguageHolder.beGone()
         }
     }
 
@@ -477,24 +593,50 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupSwipeLeftAction() = binding.apply {
+        val pro = checkPro()
+        settingsSwipeLeftActionHolder.alpha = if (pro) 1f else 0.4f
         val stringId = if (isRTLLayout) com.goodwy.strings.R.string.swipe_right_action else com.goodwy.strings.R.string.swipe_left_action
-        settingsSwipeLeftActionLabel.text = getString(stringId)
+        settingsSwipeLeftActionLabel.text = addLockedLabelIfNeeded(stringId, pro)
         settingsSwipeLeftAction.text = getSwipeActionText(true)
         settingsSwipeLeftActionHolder.setOnClickListener {
-            val items = arrayListOf(
-                RadioItem(SWIPE_ACTION_DELETE, getString(com.goodwy.commons.R.string.delete), icon = com.goodwy.commons.R.drawable.ic_delete_outline),
-                RadioItem(SWIPE_ACTION_SHARE, getString(com.goodwy.commons.R.string.share), icon = com.goodwy.commons.R.drawable.ic_ios_share),
-                RadioItem(SWIPE_ACTION_OPEN, getString(com.goodwy.commons.R.string.open_with), icon = R.drawable.ic_open_with),
-                RadioItem(SWIPE_ACTION_EDIT, getString(com.goodwy.commons.R.string.rename), icon = R.drawable.ic_file_rename),
-            )
+            if (pro) {
+                val items = arrayListOf(
+                    RadioItem(
+                        SWIPE_ACTION_DELETE,
+                        getString(com.goodwy.commons.R.string.delete),
+                        icon = com.goodwy.commons.R.drawable.ic_delete_outline
+                    ),
+                    RadioItem(
+                        SWIPE_ACTION_SHARE,
+                        getString(com.goodwy.commons.R.string.share),
+                        icon = com.goodwy.commons.R.drawable.ic_ios_share
+                    ),
+                    RadioItem(
+                        SWIPE_ACTION_OPEN,
+                        getString(com.goodwy.commons.R.string.open_with),
+                        icon = R.drawable.ic_open_with
+                    ),
+                    RadioItem(
+                        SWIPE_ACTION_EDIT,
+                        getString(com.goodwy.commons.R.string.rename),
+                        icon = R.drawable.ic_file_rename
+                    ),
+                )
 
-            val title =
-                if (isRTLLayout) com.goodwy.strings.R.string.swipe_right_action else com.goodwy.strings.R.string.swipe_left_action
-            RadioGroupIconDialog(this@SettingsActivity, items, config.swipeLeftAction, title) {
-                config.swipeLeftAction = it as Int
-                config.tabsChanged = true
-                settingsSwipeLeftAction.text = getSwipeActionText(true)
-                settingsSkipDeleteConfirmationHolder.beVisibleIf(config.swipeLeftAction == SWIPE_ACTION_DELETE || config.swipeRightAction == SWIPE_ACTION_DELETE)
+                val title =
+                    if (isRTLLayout) com.goodwy.strings.R.string.swipe_right_action else com.goodwy.strings.R.string.swipe_left_action
+                RadioGroupIconDialog(this@SettingsActivity, items, config.swipeLeftAction, title) {
+                    config.swipeLeftAction = it as Int
+                    config.tabsChanged = true
+                    settingsSwipeLeftAction.text = getSwipeActionText(true)
+                    settingsSkipDeleteConfirmationHolder.beVisibleIf(config.swipeLeftAction == SWIPE_ACTION_DELETE || config.swipeRightAction == SWIPE_ACTION_DELETE)
+                }
+            } else {
+                RxAnimation.from(settingsSwipeLeftActionHolder)
+                    .shake(shakeTranslation = 2f)
+                    .subscribe()
+
+                showSnackbar(binding.root)
             }
         }
     }
@@ -566,6 +708,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupTipJar() = binding.apply {
         settingsTipJarHolder.apply {
+            beVisibleIf(checkPro())
             background.applyColorFilter(getBottomNavigationBackgroundColor().lightenColor(4))
             setOnClickListener {
                 launchPurchase()
@@ -627,4 +770,53 @@ class SettingsActivity : SimpleActivity() {
             else -> com.goodwy.commons.R.string.last_used_tab
         }
     )
+
+    private fun updateProducts() {
+        val productList: ArrayList<String> = arrayListOf(productIdX1, productIdX2, productIdX3, subscriptionIdX1, subscriptionIdX2, subscriptionIdX3, subscriptionYearIdX1, subscriptionYearIdX2, subscriptionYearIdX3)
+        ruStoreHelper!!.getProducts(productList)
+    }
+
+    private fun handleEventStart(event: StartPurchasesEvent) {
+        when (event) {
+            is StartPurchasesEvent.PurchasesAvailability -> {
+                when (event.availability) {
+                    is FeatureAvailabilityResult.Available -> {
+                        //Process purchases available
+                        updateProducts()
+                        ruStoreIsConnected = true
+                    }
+
+                    is FeatureAvailabilityResult.Unavailable -> {
+                        //toast(event.availability.cause.message ?: "Process purchases unavailable", Toast.LENGTH_LONG)
+                    }
+
+                    else -> {}
+                }
+            }
+
+            is StartPurchasesEvent.Error -> {
+                //toast(event.throwable.message ?: "Process unknown error", Toast.LENGTH_LONG)
+            }
+        }
+    }
+
+    private fun checkPro() = resources.getBoolean(R.bool.is_pro_app) || isPro()
+
+    private fun showSnackbar(view: View) {
+        view.performHapticFeedback()
+
+        val snackbar = Snackbar.make(view, com.goodwy.strings.R.string.support_project_to_unlock, Snackbar.LENGTH_SHORT)
+            .setAction(com.goodwy.commons.R.string.support) {
+                launchPurchase()
+            }
+
+        val bgDrawable = ResourcesCompat.getDrawable(view.resources, com.goodwy.commons.R.drawable.button_background_16dp, null)
+        snackbar.view.background = bgDrawable
+        val properBackgroundColor = getProperBackgroundColor()
+        val backgroundColor = if (properBackgroundColor == Color.BLACK) getBottomNavigationBackgroundColor().lightenColor(6) else getBottomNavigationBackgroundColor().darkenColor(6)
+        snackbar.setBackgroundTint(backgroundColor)
+        snackbar.setTextColor(getProperTextColor())
+        snackbar.setActionTextColor(getProperPrimaryColor())
+        snackbar.show()
+    }
 }

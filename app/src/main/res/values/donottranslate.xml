@@ -1,7 +1,7 @@
 <resources>
-    <string name="package_name">com.goodwy.voicerecorder</string>
-    <string name="app_name_g">Right Voice Memos</string>
-    <string name="app_launcher_name_g">Voice Memos</string>
+    <string name="package_name">com.goodwy.voicerecorderfree</string>
+    <string name="app_name_g">Right Voice Recorder</string>
+    <string name="app_launcher_name_g">Voice Recorder</string>
     <string name="m4a">m4a</string>
     <string name="mp3">mp3</string>
     <string name="mp3_experimental">mp3 (Experimental)</string>
