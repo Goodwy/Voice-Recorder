@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.goodwy.voicerecorder.fragments.TrashFragment xmlns:android="http://schemas.android.com/apk/res/android"
+<com.goodwy.voicerecorderfree.fragments.TrashFragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/trash_holder"
     android:layout_width="match_parent"
@@ -44,4 +44,4 @@
             app:layoutManager="com.goodwy.commons.views.MyLinearLayoutManager" />
 
     </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
-</com.goodwy.voicerecorder.fragments.TrashFragment>
+</com.goodwy.voicerecorderfree.fragments.TrashFragment>

@@ -126,9 +126,9 @@
             android:exported="false"
             android:foregroundServiceType="microphone">
             <intent-filter>
-                <action android:name="com.goodwy.voicerecorder.action.GET_RECORDER_INFO" />
-                <action android:name="com.goodwy.voicerecorder.action.STOP_AMPLITUDE_UPDATE" />
-                <action android:name="com.goodwy.voicerecorder.action.TOGGLE_PAUSE" />
+                <action android:name="com.goodwy.voicerecorderfree.action.GET_RECORDER_INFO" />
+                <action android:name="com.goodwy.voicerecorderfree.action.STOP_AMPLITUDE_UPDATE" />
+                <action android:name="com.goodwy.voicerecorderfree.action.TOGGLE_PAUSE" />
             </intent-filter>
         </service>
 
