@@ -12,17 +12,14 @@
         <item quantity="one">%d Aufnahme</item>
         <item quantity="other">%d Aufnahmen</item>
     </plurals>
-    <string name="try_hiding_notification">Versuche, die Aufnahmebenachrichtigung auszublenden</string>
     <string name="save_recordings_in">Aufnahmen speichern in</string>
     <string name="audio_source">Tonquelle</string>
     <string name="record_after_launch">Aufnahme startet automatisch beim Öffnen der App</string>
-    <string name="audio_source_camcorder">Kamera</string>
-    <string name="audio_source_default">Android-Standard</string>
-    <string name="audio_source_unprocessed">Unverarbeitet</string>
-    <string name="audio_source_microphone">Mikrofon</string>
-    <string name="audio_source_voice_recognition">Stimmerkennung</string>
-    <string name="audio_source_voice_communication">Sprachkommunikation</string>
-    <string name="audio_source_voice_performance">Sprachleistung</string>
+    <string name="microphone_mode_camcorder">Kamera (Video)</string>
+    <string name="microphone_mode_unprocessed">Unverarbeitet (roh)</string>
+    <string name="microphone_mode_voice_recognition">Stimmerkennung</string>
+    <string name="microphone_mode_voice_communication">Sprachkommunikation (automatische Verstärkung)</string>
+    <string name="microphone_mode_voice_performance">Sprachwiedergabe (geringe Latenz)</string>
     <string name="faq_1_title">Kann ich das Benachrichtigungssymbol während der Aufnahme ausblenden\?</string>
     <string name="faq_1_text">Naja, das kommt darauf an. Während der Nutzung des Geräts ist es nicht mehr möglich, die Benachrichtigungen von Apps wie dieser vollständig auszublenden. Wenn du die Option in den Einstellungen aktivierst, wird die App ihr Bestes tun, es auszublenden. Du kannst es jedoch auf dem Sperrbildschirm ausblenden, indem du die Anzeige vertraulicher Benachrichtigungen in den Geräteeinstellungen verbietest.</string>
     <string name="player">Player</string>
@@ -32,4 +29,11 @@
     <string name="confirm_recording_folder">Du musst den Ordner bestätigen, in dem du deine Aufnahmen speichern möchtest. Bitte auf OK drücken, um fortzufahren.</string>
     <string name="move_recordings_to_new_folder_desc">Du hast bereits vorhandene Aufnahmen. Möchtest du diese in den neuen Ordner verschieben?</string>
     <string name="move_recordings">Aufnahmen verschieben</string>
+    <string name="discard_recording">Aufnahme abbrechen</string>
+    <string name="discard_recording_confirmation">Soll wirklich die aktuelle Aufnahme verworfen werden? Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="sample_rate">Abtastrate</string>
+    <string name="change_microphone_mode_confirmation">Dadurch ändert sich die Art und Weise, wie dein Gerät Audio weiterleitet und verarbeitet. Die Ergebnisse variieren je nach Gerät und können sich auf Lautstärke, Rauschen und andere Faktoren auswirken.</string>
+    <string name="microphone_mode">Mikrofonmodus</string>
+    <string name="filename_pattern">Dateinamenmuster</string>
+    <string name="filename_pattern_must_contain_all">Muss alle Platzhalter für eindeutige Dateinamen enthalten (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

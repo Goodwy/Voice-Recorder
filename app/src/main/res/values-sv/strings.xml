@@ -15,23 +15,27 @@
         <item quantity="one">%d inspelning</item>
         <item quantity="other">%d inspelningar</item>
     </plurals>
-    <string name="try_hiding_notification">Försök dölja inspelningsaviseringen</string>
     <string name="save_recordings_in">Spara inspelningar i</string>
     <string name="audio_source">Ljudkälla</string>
     <string name="bitrate">Bithastighet</string>
     <string name="record_after_launch">Börja spela in automatiskt när appen startas</string>
-    <string name="audio_source_camcorder">Kamera</string>
-    <string name="audio_source_default">Standardljudkälla</string>
-    <string name="audio_source_unprocessed">Obearbetat ljud</string>
-    <string name="audio_source_microphone">Mikrofon</string>
-    <string name="audio_source_voice_recognition">Röstigenkänning</string>
-    <string name="audio_source_voice_communication">Röstkommunikation</string>
-    <string name="audio_source_voice_performance">Röstframförande</string>
+    <string name="microphone_mode_camcorder">Kamera</string>
+    <string name="microphone_mode_unprocessed">Obearbetat ljud</string>
+    <string name="microphone_mode_voice_recognition">Röstigenkänning</string>
+    <string name="microphone_mode_voice_communication">Röstkommunikation</string>
+    <string name="microphone_mode_voice_performance">Röstframförande</string>
     <string name="faq_1_title">Kan jag dölja aviseringsikonen under inspelningen\?</string>
-    <string name="faq_1_text">Det beror på. När du använder din enhet är det inte längre möjligt att helt dölja meddelanden från appar som dessa. Om du markerar rätt inställningsobjekt gör appen sitt bästa för att dölja den. Du kan dock dölja den på låsskärmen om du inaktiverar visning av känsliga meddelanden i enhetens inställningar.</string>
+    <string name="faq_1_text">Det beror på. När du använder din enhet är det inte längre möjligt att helt dölja aviseringar från appar som den här. Om du aktiverar rätt inställning gör appen sitt bästa för att dölja den. Du kan dock dölja den på låsskärmen om du inaktiverar visning av känsliga aviseringar i enhetens inställningar.</string>
     <string name="recording_too_short">Inspelningen var för kort för att spela in!</string>
     <string name="keep_screen_on">Låt skärmen vara på under inspelning</string>
     <string name="move_recordings_to_new_folder_desc">Du har befintliga inspelningar. Vill du flytta dem till den nya mappen?</string>
     <string name="move_recordings">Flytta inspelningar</string>
     <string name="confirm_recording_folder">Du måste bekräfta mappen där du vill spara dina inspelningar. Tryck på OK för att fortsätta.</string>
+    <string name="discard_recording">Ta bort inspelning</string>
+    <string name="discard_recording_confirmation">Är du säker på att du vill ta bort den aktuella inspelningen? Det går inte att ångra den här åtgärden.</string>
+    <string name="sample_rate">Samplingsfrekvens</string>
+    <string name="microphone_mode">Mikrofonläge</string>
+    <string name="change_microphone_mode_confirmation">Detta ändrar hur enheten dirigerar och bearbetar ljud. Resultaten varierar beroende på enhet och kan påverka volym, brus och andra faktorer.</string>
+    <string name="filename_pattern">Filnamnsmönster</string>
+    <string name="filename_pattern_must_contain_all">Måste innehålla alla platshållare för unika filnamn (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

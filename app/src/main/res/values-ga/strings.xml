@@ -14,18 +14,15 @@
         <item quantity="many">%d taifeadtaí</item>
         <item quantity="other">%d taifeadtaí</item>
     </plurals>
-    <string name="try_hiding_notification">Bain triail as an bhfógra taifeadta a chur i bhfolach</string>
     <string name="save_recordings_in">Sábháil taifeadtaí i</string>
     <string name="audio_source">Foinse fuaime</string>
     <string name="bitrate">Ráta giotán</string>
-    <string name="audio_source_voice_recognition">Aitheantas gutha</string>
-    <string name="audio_source_voice_communication">Cumarsáid gutha</string>
+    <string name="microphone_mode_voice_recognition">Aitheantas gutha</string>
+    <string name="microphone_mode_voice_communication">Cumarsáid gutha</string>
     <string name="record_after_launch">Tosaigh taifeadadh go huathoibríoch tar éis seoladh an aip</string>
-    <string name="audio_source_camcorder">Ceamara</string>
-    <string name="audio_source_default">Android réamhshocraithe</string>
-    <string name="audio_source_unprocessed">Neamhphróiseáilte</string>
-    <string name="audio_source_microphone">Micreafón</string>
-    <string name="audio_source_voice_performance">Feidhmíocht gutha</string>
+    <string name="microphone_mode_camcorder">Ceamara</string>
+    <string name="microphone_mode_unprocessed">Neamhphróiseáilte</string>
+    <string name="microphone_mode_voice_performance">Feidhmíocht gutha</string>
     <string name="faq_1_title">An féidir liom an deilbhín fógra a cheilt le linn taifeadta?</string>
     <string name="faq_1_text">Bhuel, braitheann sé. Cé go n-úsáideann tú do ghléas ní féidir fógraí aipeanna mar seo a cheilt go hiomlán a thuilleadh. Má dhéanann tú seiceáil ar an mír socruithe cuí, déanfaidh an app a dhícheall é a cheilt. Is féidir leat é a cheilt ar an scáileán glas, áfach, má dhíchumasaíonn tú taispeáint fógraí íogaire i socruithe do ghléis.</string>
     <string name="recording_saved_successfully">D\'éirigh leis an taifeadadh a shábháil</string>
@@ -35,4 +32,11 @@
     <string name="confirm_recording_folder">Ní mór duit an fillteán a dheimhniú inar mian leat do thaifeadtaí a shábháil. Brúigh OK chun leanúint ar aghaidh.</string>
     <string name="move_recordings_to_new_folder_desc">Tá taifeadtaí agat cheana féin. Ar mhaith leat iad a bhogadh chuig d\'fhillteán nua?</string>
     <string name="move_recordings">Bog taifeadtaí</string>
+    <string name="discard_recording">Cealaigh an taifeadadh</string>
+    <string name="discard_recording_confirmation">An bhfuil tú cinnte gur mhaith leat an taifeadadh reatha a chealú? Ní féidir é seo a chealú.</string>
+    <string name="sample_rate">Ráta samplach</string>
+    <string name="change_microphone_mode_confirmation">Athraíonn sé seo an chaoi a ndéanann do ghléas fuaim a threorú agus a phróiseáil. Athraíonn na torthaí de réir an ghléis agus is féidir leo tionchar a imirt ar an toirt, ar an torann agus ar fhachtóirí eile.</string>
+    <string name="microphone_mode">Mód micreafóin</string>
+    <string name="filename_pattern">Patrún ainm comhaid</string>
+    <string name="filename_pattern_must_contain_all">Ní mór gach áitchoinneálaí a áireamh le haghaidh ainmneacha comhad uathúla (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

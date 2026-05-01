@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="default_widget_bg_color">@color/red_missed</color>
+    <color name="color_error">@color/md_red_500_dark</color>
 
     <color name="white">#FFFF</color>
     <color name="color_primary">@color/primary</color>

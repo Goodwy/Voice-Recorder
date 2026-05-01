@@ -13,19 +13,26 @@
     <plurals name="delete_recordings">
         <item quantity="other">%d rekaman</item>
     </plurals>
-    <string name="try_hiding_notification">Coba sembunyikan pemberitahuan rekaman</string>
     <string name="save_recordings_in">Simpan rekaman di</string>
     <string name="audio_source">Sumber audio</string>
     <string name="record_after_launch">Mulai rekam secara otomatis setelah membuka aplikasi</string>
-    <string name="audio_source_camcorder">Kamera</string>
-    <string name="audio_source_default">Bawaan Android</string>
-    <string name="audio_source_unprocessed">Tidak diproses</string>
-    <string name="audio_source_microphone">Mikrofon</string>
-    <string name="audio_source_voice_recognition">Pengenalan suara</string>
-    <string name="audio_source_voice_communication">Komunikasi suara</string>
-    <string name="audio_source_voice_performance">Performa suara</string>
+    <string name="microphone_mode_camcorder">Kamera</string>
+    <string name="microphone_mode_unprocessed">Tidak diproses</string>
+    <string name="microphone_mode_voice_recognition">Pengenalan suara</string>
+    <string name="microphone_mode_voice_communication">Komunikasi suara</string>
+    <string name="microphone_mode_voice_performance">Performa suara</string>
     <string name="faq_1_title">Bisakah saya menyembunyikan ikon notifikasi selama merekam\?</string>
     <string name="faq_1_text">Tergantung. Saat Anda menggunakan perangkat, tidak mungkin lagi untuk menyembunyikan sepenuhnya pemberitahuan aplikasi seperti ini. Jika Anda memeriksa item pengaturan yang tepat, aplikasi akan melakukan yang terbaik untuk menyembunyikannya. Anda dapat menyembunyikannya di layar kunci, jika Anda menonaktifkan tampilan pemberitahuan sensitif di pengaturan perangkat Anda.</string>
     <string name="bitrate">Laju bit</string>
     <string name="recorder">Perekam</string>
+    <string name="confirm_recording_folder">Anda harus mengonfirmasi folder tempat Anda ingin menyimpan rekaman. Silahkan tekan OK untuk melanjutkan.</string>
+    <string name="move_recordings_to_new_folder_desc">Anda memiliki rekaman yang sudah ada. Apakah Anda ingin memindahkannya ke folder baru Anda?</string>
+    <string name="move_recordings">Pindahkan rekaman</string>
+    <string name="recording_too_short">Rekaman terlalu pendek untuk disimpan!</string>
+    <string name="keep_screen_on">Biarkan layar tetap menyala selama perekaman</string>
+    <string name="discard_recording">Buang rekaman</string>
+    <string name="discard_recording_confirmation">Apakah Anda yakin ingin membuang rekaman saat ini? Tindakan ini tidak dapat dibatalkan.</string>
+    <string name="change_microphone_mode_confirmation">Ini mengubah cara perangkat Anda merutekan dan memproses audio. Hasilnya bervariasi tergantung perangkat dan dapat memengaruhi volume, noise, dan faktor lainnya.</string>
+    <string name="microphone_mode">Mode mikrofon</string>
+    <string name="sample_rate">Laju sampel</string>
 </resources>

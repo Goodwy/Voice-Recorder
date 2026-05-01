@@ -16,18 +16,15 @@
         <item quantity="few">%d snimke</item>
         <item quantity="other">%d snimki</item>
     </plurals>
-    <string name="try_hiding_notification">Pokušaj sakriti obavijesti snimanja</string>
     <string name="save_recordings_in">Spremi snimanja u</string>
     <string name="audio_source">Izvor zvuka</string>
     <string name="bitrate">Brzina prijenosa</string>
     <string name="record_after_launch">Započni automatsko snimanje nakon pokretanja aplikacije</string>
-    <string name="audio_source_camcorder">Kamera</string>
-    <string name="audio_source_default">Standard Androida</string>
-    <string name="audio_source_unprocessed">Neobrađeno</string>
-    <string name="audio_source_microphone">Mikrofon</string>
-    <string name="audio_source_voice_recognition">Prepoznavanje glasa</string>
-    <string name="audio_source_voice_communication">Glasovna komunikacija</string>
-    <string name="audio_source_voice_performance">Glasovna izvedba</string>
+    <string name="microphone_mode_camcorder">Kamera</string>
+    <string name="microphone_mode_unprocessed">Neobrađeno</string>
+    <string name="microphone_mode_voice_recognition">Prepoznavanje glasa</string>
+    <string name="microphone_mode_voice_communication">Glasovna komunikacija</string>
+    <string name="microphone_mode_voice_performance">Glasovna izvedba</string>
     <string name="faq_1_title">Mogu li sakriti ikonu obavijesti tijekom snimanja\?</string>
     <string name="faq_1_text">Ovisi. Dok koristiš svoj uređaj više nije moguće u potpunosti sakriti obavijesti ovakvih aplikacija. Ako označiš ispravnu stavku postavke, aplikacija će je pokušati sakriti. Možeš je sakriti na zaključanom ekranu, ako isključiš prikaz osobnih obavijesti u postavkama uređaja.</string>
     <string name="keep_screen_on">Ostavi ekran uključen tijekom snimanja</string>
@@ -35,4 +32,11 @@
     <string name="move_recordings">Premjesti snimke</string>
     <string name="move_recordings_to_new_folder_desc">Imaš postojeće snimke. Želiš li ih premjestiti u tvoju novu mapu?</string>
     <string name="recording_too_short">Snimka je bila prekratka za snimanje!</string>
+    <string name="discard_recording">Odbaci snimku</string>
+    <string name="discard_recording_confirmation">Stvarno želiš odbaciti trenutačnu snimku? To se ne može poništiti.</string>
+    <string name="sample_rate">Stopa uzorka</string>
+    <string name="change_microphone_mode_confirmation">Ovo mijenja način na koji vaš uređaj usmjerava i obrađuje zvuk. Rezultati se razlikuju ovisno o uređaju i mogu utjecati na glasnoću, buku i druge faktore.</string>
+    <string name="microphone_mode">Modus mikrofona</string>
+    <string name="filename_pattern">Uzorak za ime datoteke</string>
+    <string name="filename_pattern_must_contain_all">Mora sadržati sva rezervirana mjesta za jedinstvena imena datoteka (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

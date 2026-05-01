@@ -3,30 +3,35 @@
     <string name="app_launcher_name">Lydoptager</string>
     <string name="recording_saved_successfully">Optagelse gemt</string>
     <string name="recording">Optager</string>
-    <string name="no_recordings_found">Ingen optagelser lavet af denne app
-\ner blevet fundet</string>
-    <string name="no_recordings_in_folder_found">Ingen optagelser er blevet fundet
-\ni den valgte mappe</string>
-    <string name="paused">Sat på pause</string>
+    <string name="no_recordings_found">Ingen optagelser lavet af denne app \nblev fundet</string>
+    <string name="no_recordings_in_folder_found">Ingen optagelser blev fundet \ni den valgte mappe</string>
+    <string name="paused">På pause</string>
     <string name="delete_recordings_confirmation">Slet %s\?</string>
     <plurals name="delete_recordings">
         <item quantity="one">%d optagelse</item>
         <item quantity="other">%d optagelser</item>
     </plurals>
-    <string name="try_hiding_notification">Prøv at skjule optagelsesmeddelelsen</string>
     <string name="save_recordings_in">Gem optagelser i</string>
     <string name="record_after_launch">Start optagelsen automatisk efter start af appen</string>
     <string name="faq_1_title">Kan jeg skjule notifikationsikonet under optagelse\?</string>
-    <string name="faq_1_text">Mens du bruger din enhed, er det ikke længere muligt helt at skjule notifikationer fra apps som denne. Hvis du markerer det rigtige indstillingselement, gør appen sit bedste for at skjule den. Du kan dog skjule den på låseskærmen, hvis du deaktiverer visning af følsomme meddelelser i enhedens indstillinger.</string>
+    <string name="faq_1_text">Det afhænger. Mens du bruger enheden, er det ikke muligt helt at skjule notifikationer fra apps som denne. Hvis du vælger den rette indstilling, vil appen gøre sit bedste for at skjule dem. På låseskærmen kan du dog skjule dem ved at slå visning af følsomme notifikationer fra i enhedens indstillinger.</string>
     <string name="recorder">Optager</string>
     <string name="player">Afspiller</string>
     <string name="bitrate">Bitrate</string>
-    <string name="audio_source_default">Android standard</string>
-    <string name="audio_source_unprocessed">Ubehandlet</string>
-    <string name="audio_source_microphone">Mikrofon</string>
-    <string name="audio_source_voice_recognition">Stemmegenkendelse</string>
-    <string name="audio_source_voice_communication">Stemmekommunikation</string>
+    <string name="microphone_mode_unprocessed">Ubehandlet</string>
+    <string name="microphone_mode_voice_recognition">Stemmegenkendelse</string>
+    <string name="microphone_mode_voice_communication">Stemmekommunikation</string>
     <string name="audio_source">Lydkilde</string>
-    <string name="audio_source_camcorder">Kamera</string>
-    <string name="audio_source_voice_performance">Stemmepræstation</string>
+    <string name="microphone_mode_camcorder">Kamera</string>
+    <string name="microphone_mode_voice_performance">Stemmepræstation</string>
+    <string name="confirm_recording_folder">Du skal bekræfte den mappe, hvor dine optagelser skal gemmes. Tryk på OK for at fortsætte.</string>
+    <string name="move_recordings">Flyt optagelser</string>
+    <string name="move_recordings_to_new_folder_desc">Du har eksisterende optagelser. Vil du flytte dem til din nye mappe?</string>
+    <string name="recording_too_short">Optagelsen var for kort til at blive optaget!</string>
+    <string name="discard_recording">Kassér optagelse</string>
+    <string name="discard_recording_confirmation">Er du sikker på, at du vil kassere den aktuelle optagelse? Dette kan ikke fortrydes.</string>
+    <string name="keep_screen_on">Hold skærmen tændt under optagelse</string>
+    <string name="sample_rate">Samplingfrekvens</string>
+    <string name="microphone_mode">Mikrofontilstand</string>
+    <string name="change_microphone_mode_confirmation">Dette ændrer, hvordan din enhed dirigerer og behandler lyd. Resultaterne varierer fra enhed til enhed og kan påvirke lydstyrke, støj og andre faktorer.</string>
 </resources>

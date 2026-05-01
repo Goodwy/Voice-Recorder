@@ -17,18 +17,15 @@
         <item quantity="many">%d записей</item>
         <item quantity="other">%d записей</item>
     </plurals>
-    <string name="try_hiding_notification">Пытаться скрыть уведомление о записи</string>
     <string name="save_recordings_in">Место хранения записей</string>
     <string name="audio_source">Источник звука</string>
     <string name="bitrate">Битрейт</string>
     <string name="record_after_launch">Автоматически начинать запись при запуске приложения</string>
-    <string name="audio_source_camcorder">Камера</string>
-    <string name="audio_source_default">Системный по умолчанию</string>
-    <string name="audio_source_unprocessed">Необработанный</string>
-    <string name="audio_source_microphone">Микрофон</string>
-    <string name="audio_source_voice_recognition">Распознавание голоса</string>
-    <string name="audio_source_voice_communication">Голосовая связь</string>
-    <string name="audio_source_voice_performance">Голосовое исполнение</string>
+    <string name="microphone_mode_camcorder">Камера (видео)</string>
+    <string name="microphone_mode_unprocessed">Без обработки (raw)</string>
+    <string name="microphone_mode_voice_recognition">Разборчивость голоса</string>
+    <string name="microphone_mode_voice_communication">Голосовая связь (автоусиление)</string>
+    <string name="microphone_mode_voice_performance">Предпочтение голоса (низкая задержка)</string>
     <string name="faq_1_title">Можно ли скрыть значок уведомления во время записи\?</string>
     <string name="faq_1_text">Ну, это зависит от обстоятельств. Пока вы используете своё устройство, полностью скрыть уведомления о таких приложениях уже невозможно. Если вы установите соответствующий пункт в настройках, приложение сделает всё возможное, чтобы скрыть его. Также можно скрыть уведомление на экране блокировки, если отключить отображение конфиденциальных уведомлений в настройках устройства.</string>
     <string name="keep_screen_on">Не отключать экран во время записи</string>
@@ -36,4 +33,11 @@
     <string name="confirm_recording_folder">Необходимо подтвердить папку, в которую вы хотите сохранять свои записи. Нажмите \"OK\" для продолжения.</string>
     <string name="move_recordings">Перемещение записей</string>
     <string name="move_recordings_to_new_folder_desc">У вас есть записи. Переместить их в новую папку?</string>
+    <string name="discard_recording">Отменить запись</string>
+    <string name="discard_recording_confirmation">Отменить текущую запись? Это действие невозможно изменить.</string>
+    <string name="sample_rate">Частота дискретизации</string>
+    <string name="microphone_mode">Режим микрофона</string>
+    <string name="change_microphone_mode_confirmation">Будет изменён способ передачи и обработки звука на вашем устройстве. Результаты зависят от характеристик устройства и могут влиять на громкость, уровень шума и другие факторы.</string>
+    <string name="filename_pattern">Шаблон имени файла</string>
+    <string name="filename_pattern_must_contain_all">Необходимо использовать все заполнители для получения уникальных имён файлов (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

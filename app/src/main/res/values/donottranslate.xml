@@ -1,6 +1,6 @@
 <resources>
-    <string name="package_name">com.goodwy.voicerecorderfree</string>
-    <string name="app_name_g">Right Voice Recorder</string>
+    <string name="package_name">dev.goodwy.voicerecorder</string>
+    <string name="app_name_g">Alright Voice Recorder</string>
     <string name="app_launcher_name_g">Voice Recorder</string>
     <string name="m4a">m4a</string>
     <string name="mp3">mp3</string>
@@ -8,4 +8,20 @@
     <string name="ogg">ogg</string>
     <string name="ogg_opus">ogg (Opus)</string>
     <string name="bitrate_value">%d kbps</string>
+    <string name="sampling_rate_value">%d Hz</string>
+
+    <!-- Release notes --><!-- TODO changelog -->
+    <string name="release_821">
+        Compatibility updates for Android 15 &amp; 16\n
+        Changed the logic of styles\n
+        Changed colors of context action modes\n
+        Changed swipe behavior, removed inertia\n
+        Added ‘Swipe width’ option\n
+        Added ‘App font’ option\n
+        Added ‘Show search bar’ option\n
+        Option to customize recording filename pattern with datetime placeholders\n
+        Updated tab icon\n
+        Playback is now paused when external audio devices are disconnected\n
+        Fixed bugs, improved stability
+    </string>
 </resources>

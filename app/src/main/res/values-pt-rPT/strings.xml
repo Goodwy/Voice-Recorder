@@ -7,8 +7,7 @@
 \ncriadas por esta aplicação</string>
     <string name="bitrate">Taxa de dados</string>
     <string name="record_after_launch">Iniciar gravação automaticamente ao iniciar a aplicação</string>
-    <string name="audio_source_camcorder">Câmera</string>
-    <string name="audio_source_default">Predefinição Android</string>
+    <string name="microphone_mode_camcorder">Câmera</string>
     <string name="faq_1_title">Posso ocultar o ícone de notificação durante a gravação?</string>
     <string name="no_recordings_in_folder_found">Não foram encontradas gravações
 \nna pasta selecionada</string>
@@ -19,15 +18,23 @@
     <plurals name="delete_recordings">
         <item quantity="one">%d gravação</item>
         <item quantity="many">%d gravações</item>
-        <item quantity="other"></item>
+        <item quantity="other">%d gravações</item>
     </plurals>
     <string name="audio_source">Fonte de áudio</string>
-    <string name="audio_source_unprocessed">Não processado</string>
-    <string name="audio_source_microphone">Microfone</string>
-    <string name="try_hiding_notification">Tentar ocultar a notificação da gravação</string>
+    <string name="microphone_mode_unprocessed">Não processado</string>
     <string name="save_recordings_in">Guardar gravações em</string>
-    <string name="audio_source_voice_recognition">Reconhecimento de voz</string>
-    <string name="audio_source_voice_communication">Comunicação por voz</string>
-    <string name="audio_source_voice_performance">Desempenho de voz</string>
-    <string name="faq_1_text">Depende. Actuamente, já não possível ocultar totalmente as notificações em aplicações deste tipo. Tente nas Definições da aplicação, habilitar a alinea correspondente e nas Definições do sistema, desabilitar a apresentação de notificações desta natureza no ecrã de bloqueio.</string>
+    <string name="microphone_mode_voice_recognition">Reconhecimento de voz</string>
+    <string name="microphone_mode_voice_communication">Comunicação por voz</string>
+    <string name="microphone_mode_voice_performance">Desempenho de voz</string>
+    <string name="faq_1_text">Depende. Atuamente, já não é possível ocultar totalmente as notificações em aplicações deste tipo. Tente nas Definições da aplicação, habilitar a opção correspondente e nas Definições do sistema, desabilitar a apresentação de notificações desta natureza no ecrã de bloqueio.</string>
+    <string name="discard_recording">Cancelar gravação</string>
+    <string name="discard_recording_confirmation">Tem certeza que quer cancelar a gravação? Não pode ser desfeito.</string>
+    <string name="keep_screen_on">Manter o ecrã ligado durante a gravação</string>
+    <string name="confirm_recording_folder">Deve confirmar a pasta selecionada onde quer guardar as suas gravações. Clique OK para continuar.</string>
+    <string name="move_recordings">Mover gravações</string>
+    <string name="move_recordings_to_new_folder_desc">Tem gravações existentes. Quer as mover para a sua pasta nova?</string>
+    <string name="recording_too_short">Esta gravação é demasiado curta para ser guardada!</string>
+    <string name="change_microphone_mode_confirmation">Isto altera a forma como o seu dispositivo encaminha e processa o áudio. Os resultados variam de acordo com o dispositivo e podem afetar o volume, o ruído e outros fatores.</string>
+    <string name="microphone_mode">Modo de microfone</string>
+    <string name="sample_rate">Taxa de amostragem</string>
 </resources>

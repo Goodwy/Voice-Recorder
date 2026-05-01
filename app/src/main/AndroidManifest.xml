@@ -33,7 +33,6 @@
         android:appCategory="audio"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_launcher_name_g"
-        android:localeConfig="@xml/locale_config"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
@@ -67,7 +66,8 @@
 
         <activity
             android:name=".activities.BackgroundRecordActivity"
-            android:exported="false"
+            android:exported="true"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoDisplay" />
 
         <activity
@@ -124,11 +124,12 @@
         <service
             android:name=".services.RecorderService"
             android:exported="false"
-            android:foregroundServiceType="microphone">
+            android:foregroundServiceType="microphone"
+            android:stopWithTask="false">
             <intent-filter>
-                <action android:name="com.goodwy.voicerecorderfree.action.GET_RECORDER_INFO" />
-                <action android:name="com.goodwy.voicerecorderfree.action.STOP_AMPLITUDE_UPDATE" />
-                <action android:name="com.goodwy.voicerecorderfree.action.TOGGLE_PAUSE" />
+                <action android:name="dev.goodwy.voicerecorder.action.GET_RECORDER_INFO" />
+                <action android:name="dev.goodwy.voicerecorder.action.STOP_AMPLITUDE_UPDATE" />
+                <action android:name="dev.goodwy.voicerecorder.action.TOGGLE_PAUSE" />
             </intent-filter>
         </service>
 
@@ -308,5 +309,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 </manifest>

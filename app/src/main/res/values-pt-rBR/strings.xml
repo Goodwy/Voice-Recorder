@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Gravador de voz</string>
+    <string name="app_launcher_name">Gravador de Voz</string>
     <string name="recording_saved_successfully">Gravação salva com sucesso</string>
     <string name="recording">Gravação</string>
     <string name="no_recordings_found">Nenhuma gravação criada por
@@ -13,20 +13,30 @@
     <string name="delete_recordings_confirmation">Apagar %s\?</string>
     <plurals name="delete_recordings">
         <item quantity="one">%d gravação</item>
+        <item quantity="many">%d gravações</item>
         <item quantity="other">%d gravações</item>
     </plurals>
-    <string name="try_hiding_notification">Tentar ocultar a notificação de gravação</string>
     <string name="save_recordings_in">Salvar gravações em</string>
     <string name="audio_source">Fonte de áudio</string>
     <string name="record_after_launch">Começar a gravar automaticamente após iniciar o aplicativo</string>
-    <string name="audio_source_camcorder">Câmera</string>
-    <string name="audio_source_default">Padrão do Android</string>
-    <string name="audio_source_unprocessed">Não processado</string>
-    <string name="audio_source_microphone">Microfone</string>
-    <string name="audio_source_voice_recognition">Reconhecimento de voz</string>
-    <string name="audio_source_voice_communication">Comunicação por voz</string>
-    <string name="audio_source_voice_performance">Desempenho da voz</string>
+    <string name="microphone_mode_camcorder">Câmera</string>
+    <string name="microphone_mode_unprocessed">Não processado</string>
+    <string name="microphone_mode_voice_recognition">Reconhecimento de voz</string>
+    <string name="microphone_mode_voice_communication">Comunicação por voz</string>
+    <string name="microphone_mode_voice_performance">Desempenho da voz</string>
     <string name="faq_1_title">Posso ocultar o ícone de notificação durante a gravação\?</string>
     <string name="faq_1_text">Bem, depende. Enquanto você usa seu dispositivo, não é mais possível ocultar totalmente as notificações de aplicativos como este. Se você verificar o item de configuração adequado, o aplicativo fará o seu melhor para escondê-lo. Você pode escondê-lo na tela de bloqueio desativando a exibição de notificações confidenciais nas configurações do dispositivo.</string>
     <string name="bitrate">Taxa de bits</string>
+    <string name="keep_screen_on">Mantenha a tela ligada durante a gravação</string>
+    <string name="move_recordings">Mover gravações</string>
+    <string name="confirm_recording_folder">Você deve confirmar a pasta onde deseja salvar suas gravações. Pressione OK para continuar.</string>
+    <string name="move_recordings_to_new_folder_desc">Você tem gravações existentes. Quer movê-las para sua nova pasta?</string>
+    <string name="recording_too_short">A gravação foi muito curta para gravar!</string>
+    <string name="discard_recording">Cancelar gravação</string>
+    <string name="discard_recording_confirmation">Você tem certeza que quer cancelar a gravação atual? Isso não poderá ser desfeito.</string>
+    <string name="sample_rate">Taxa de amostragem</string>
+    <string name="change_microphone_mode_confirmation">Isso altera a forma como seu dispositivo encaminha e processa o áudio. Os resultados variam de acordo com o dispositivo e podem afetar o volume, o ruído e outros fatores.</string>
+    <string name="microphone_mode">Modo microfone</string>
+    <string name="filename_pattern">Padrão de nome de arquivo</string>
+    <string name="filename_pattern_must_contain_all">Deve incluir todos os espaços reservados para nomes de arquivos exclusivos (%Y, %M, %D, %h, %m, %s)</string>
 </resources>

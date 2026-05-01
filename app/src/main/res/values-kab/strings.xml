@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="player">Ameɣri</string>
+    <string name="recorder">Amseklas</string>
+    <string name="app_launcher_name">Amseklas n taɣect</string>
+    <string name="delete_recordings_confirmation">Kkes %s?</string>
+    <string name="audio_source">Aɣbalu n umeslaw</string>
+    <string name="recording_saved_successfully">Asekles yettwaskelsen akken iwata</string>
+    <string name="recording_too_short">Asekles wezzil aṭas akken ad yettwakles!</string>
+    <string name="recording">Asekles</string>
+    <string name="no_recordings_in_folder_found">Ulac ikalasen yettwafen\nDeg ukaram yettwafernen</string>
+    <string name="paused">Yeḥbes</string>
+    <string name="change_microphone_mode_confirmation">Aya yettbeddil amek ay tteddun yibriden d ukala n umeslaw n yibenk-nnek-nnem. Igmaḍ mgaraden s yibenk ɣer wayeḍ, aya yezmer ad yesɛu tazrirt ɣef ubleɣ, lḥess d yimgan-iḍen.</string>
+    <string name="save_recordings_in">Sekles ikalasen deg</string>
+    <string name="record_after_launch">Bdu asekles awurman seld asenker n usnas</string>
+    <string name="keep_screen_on">Eǧǧ agdil deg lawan n usekles</string>
+    <string name="microphone_mode_camcorder">Takamiṛat (tavidyut)</string>
+    <string name="microphone_mode_voice_communication">Taɣwalt n taɣect</string>
+    <string name="microphone_mode_voice_performance">Tamellit n taɣect</string>
+    <string name="faq_1_text">Ihi, ilmend n waya. Skud tesseqdaceḍ ibenk-ik, ur yezmir ara ad yeffer ilɣuten n yisnasen am wigi. Ma tesneqdeḍ aferdis n usbadu iwatan, asnas ad yeg ayen yezmer akken ad t-yeffer. Ɣas akka, tzemreḍ ad t-teffreḍ ɣef tsekkaṛt n ugdil, ma yella tekkseḍ askan n yilɣa imḥulfuyen deg yiɣewwaren-ik n yibenk.</string>
+</resources>
